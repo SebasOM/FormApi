@@ -33,14 +33,19 @@ export function Menu() {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Pricing
-                </a>
+                <Link className="nav-link" to="/gastos">
+                  Gastos
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link disabled" aria-disabled="true">
-                  Disabled
-                </a>
+              <Link className="nav-link" to="/ingresos">
+                  Ingresos
+                </Link>
+              </li>
+              <li className="nav-item">
+              <Link className="nav-link" to="/categoria">
+                  Categoria
+                </Link>
               </li>
             </ul>
           </div>
