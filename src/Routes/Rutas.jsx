@@ -5,6 +5,7 @@ import { Usuarios } from "../Components/pages/Usuarios/Usuarios";
 import { Gastos } from "../Components/pages/Gastos/Gasto";
 import { Ingresos } from "../Components/pages/Ingresos/Ingresos";
 import { Categoria } from "../Components/pages/Categoria/Categoria";
+import { ListadoUsuarios } from "../Components/pages/ListadoDeUsuarios/ListadoDeUsuarios";
 
 export function Rutas(){
     return(
@@ -13,6 +14,7 @@ export function Rutas(){
         <Routes>
         <Route path="/" element={ <Home /> } />
         <Route path="/usuarios" element={ <Usuarios /> } />
+        <Route path="/listado" element={ <ListadoUsuarios /> } />
         <Route path="/gastos" element={ <Gastos /> } />
         <Route path="/ingresos" element={ <Ingresos /> } />
         <Route path="/categoria" element={ <Categoria /> } />

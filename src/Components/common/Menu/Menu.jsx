@@ -33,6 +33,11 @@ export function Menu() {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to="/listado">
+                  Listado de usuarios
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/gastos">
                   Gastos
                 </Link>
