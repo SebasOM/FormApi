@@ -4,8 +4,8 @@ export async function registrarUsuario(datosUsuario){
     const URL ='http://localhost:8000/usuarios'
 let peticion={
     method:"POST",
-        headers:{"Content-Type":"application/jason"},
-        body:JSON.stringify(datosEnvio)
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify(datosUsuario)
     }
     let respuestaInicial=await fetch(URL, peticion)
     let usuarios=await respuestaInicial.json()

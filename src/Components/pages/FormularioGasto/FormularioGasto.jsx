@@ -1,10 +1,29 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { registrarGasto } from "../../../Services/serviciosGastos.js";
 
-export function FormularioGasto() {
+  export function FormularioGasto() {
   const [montoGasto, setMontoGasto] = useState("");
   const [fechaGasto, setFechaGasto] = useState("");
   const [descipcionGasto, setDescripcionGasto] = useState("");
   const [nombreGasto, setNombreGasto] = useState("");
+
+  const [formularioEnvado, setFormularioEnvado] = useState(false);
+  const [datosFormulario, setDatosFormulario] = useState("");
+
+  useEffect(
+    function () {
+      if (formularioEnvado == true) {
+        console.log("Voy al back a consumir");
+        // console.log(datosFormulario)
+        registrarGasto(datosFormulario)
+        .then(function(respuestaBack){
+          console.log(respuestaBack)
+        })
+        setFormularioEnvado(false);
+      }
+    
+    },[formularioEnvado])
+
 
   function ProcesarFormulario(evento) {
     evento.preventDefault();
@@ -14,7 +33,8 @@ export function FormularioGasto() {
       decripcion: descipcionGasto,
       nombre: nombreGasto,
     };
-    console.log(datosGasto);
+    setDatosFormulario(datosGasto)
+  setFormularioEnvado(true)
   }
 
   return (
